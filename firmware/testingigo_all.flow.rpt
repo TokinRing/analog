@@ -1,0 +1,117 @@
+Flow report for testingigo_all
+Tue Oct 07 18:54:52 2008
+Quartus II Version 8.0 Build 231 07/10/2008 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++------------------------------------+----------------------------------------------+
+; Flow Status                        ; Successful - Tue Oct 07 18:54:52 2008        ;
+; Quartus II Version                 ; 8.0 Build 231 07/10/2008 SP 1 SJ Web Edition ;
+; Revision Name                      ; testingigo_all                               ;
+; Top-level Entity Name              ; testingigo_all                               ;
+; Family                             ; Cyclone II                                   ;
+; Device                             ; EP2C5T144C8                                  ;
+; Timing Models                      ; Final                                        ;
+; Met timing requirements            ; Yes                                          ;
+; Total logic elements               ; 619 / 4,608 ( 13 % )                         ;
+;     Total combinational functions  ; 550 / 4,608 ( 12 % )                         ;
+;     Dedicated logic registers      ; 368 / 4,608 ( 8 % )                          ;
+; Total registers                    ; 368                                          ;
+; Total pins                         ; 31 / 89 ( 35 % )                             ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 50,176 / 119,808 ( 42 % )                    ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                               ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                ;
++------------------------------------+----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/07/2008 18:53:59 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; testingigo_all      ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-----------------------------------------+------------------------------+--------------------+-------------+------------+
+; Assignment Name                         ; Value                        ; Default Value      ; Entity Name ; Section Id ;
++-----------------------------------------+------------------------------+--------------------+-------------+------------+
+; ADV_NETLIST_OPT_SYNTH_GATE_RETIME       ; On                           ; Off                ; --          ; --         ;
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP     ; On                           ; Off                ; --          ; --         ;
+; AUTO_PACKED_REGISTERS                   ; Normal                       ; Off                ; --          ; --         ;
+; AUTO_PACKED_REGISTERS_CYCLONE           ; Normal                       ; Auto               ; --          ; --         ;
+; AUTO_PACKED_REGISTERS_MAXII             ; Normal                       ; Auto               ; --          ; --         ;
+; AUTO_PACKED_REGISTERS_STRATIX           ; Normal                       ; Auto               ; --          ; --         ;
+; AUTO_PACKED_REGISTERS_STRATIXII         ; Normal                       ; Auto               ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                   ; 136642423715.122342003904016 ; --                 ; --          ; --         ;
+; CYCLONE_OPTIMIZATION_TECHNIQUE          ; Speed                        ; Balanced           ; --          ; --         ;
+; IGNORE_LCELL_BUFFERS                    ; On                           ; Off                ; --          ; --         ;
+; MUX_RESTRUCTURE                         ; Off                          ; Auto               ; --          ; --         ;
+; OPTIMIZE_TIMING                         ; Extra effort                 ; Normal compilation ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC          ; On                           ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ; On                           ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING    ; On                           ; Off                ; --          ; --         ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL        ; MAXIMUM                      ; Normal             ; --          ; --         ;
++-----------------------------------------+------------------------------+--------------------+-------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis    ; 00:00:21     ; 1.0                     ; 173 MB              ; 00:00:08                           ;
+; Fitter                  ; 00:00:22     ; 1.0                     ; 170 MB              ; 00:00:16                           ;
+; Assembler               ; 00:00:02     ; 1.0                     ; 145 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 115 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:47     ; --                      ; --                  ; 00:00:26                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off flashy_get -c testingigo_all
+quartus_fit --read_settings_files=off --write_settings_files=off flashy_get -c testingigo_all
+quartus_asm --read_settings_files=off --write_settings_files=off flashy_get -c testingigo_all
+quartus_tan --read_settings_files=off --write_settings_files=off flashy_get -c testingigo_all --timing_analysis_only
+
+
+

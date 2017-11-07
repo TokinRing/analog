@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.069 ns
+From           : FX2_FD[0]
+To             : control:inst|discriminator[3]
+From Clock     : --
+To Clock       : External_clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.629 ns
+From           : FX2_bidir:inst1|state[0]
+To             : FX2_FD[1]
+From Clock     : FX2_CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.302 ns
+From           : FX2_flags[2]
+To             : FX2_FD[0]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.450 ns
+From           : FX2_flags[0]
+To             : FX2_bidir:inst1|state[2]
+From Clock     : --
+To Clock       : FX2_CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'External_clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 110.06 MHz ( period = 9.086 ns )
+From           : control:inst|discriminator[7]
+To             : flashy_talk:inst12|process_adc:inst|counter[21]_OTERM315
+From Clock     : External_clock
+To Clock       : External_clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'FX2_CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 144.93 MHz ( period = 6.900 ns )
+From           : dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|rdptr_g[6]~_Duplicate_18
+To             : dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_477:usedw_counter|safe_q[9]
+From Clock     : FX2_CLK
+To Clock       : FX2_CLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

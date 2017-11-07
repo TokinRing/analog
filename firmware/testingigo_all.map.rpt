@@ -1,0 +1,1040 @@
+Analysis & Synthesis report for testingigo_all
+Tue Oct 07 18:54:18 2008
+Quartus II Version 8.0 Build 231 07/10/2008 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. State Machine - |testingigo_all|summator:inst3|state
+  9. Registers Protected by Synthesis
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Gate-level Retiming
+ 13. Multiplexer Restructuring Statistics (No Restructuring Performed)
+ 14. Source assignments for dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram
+ 15. Source assignments for dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1
+ 16. Source assignments for dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram
+ 17. Source assignments for dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1
+ 18. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component
+ 19. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated
+ 20. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p
+ 21. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_31c:wrptr_gp
+ 22. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|altsyncram_dhu:fifo_ram
+ 23. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|dffpipe_c2e:rdaclr
+ 24. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp
+ 25. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_1v8:dffpipe6
+ 26. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp
+ 27. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp|dffpipe_2v8:dffpipe9
+ 28. Source assignments for flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram
+ 29. Source assignments for flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram|altsyncram_iej1:altsyncram1
+ 30. Parameter Settings for User Entity Instance: dcfifo3:inst11|scfifo:scfifo_component
+ 31. Parameter Settings for User Entity Instance: dcfifo2:inst5|scfifo:scfifo_component
+ 32. Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component
+ 33. Parameter Settings for User Entity Instance: flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component
+ 34. Parameter Settings for User Entity Instance: flashy_talk:inst12|datafilter:inst4
+ 35. Parameter Settings for User Entity Instance: flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component
+ 36. scfifo Parameter Settings by Entity Instance
+ 37. dcfifo Parameter Settings by Entity Instance
+ 38. Analysis & Synthesis Messages
+ 39. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Oct 07 18:54:18 2008        ;
+; Quartus II Version                 ; 8.0 Build 231 07/10/2008 SP 1 SJ Web Edition ;
+; Revision Name                      ; testingigo_all                               ;
+; Top-level Entity Name              ; testingigo_all                               ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 464                                          ;
+;     Total combinational functions  ; 464                                          ;
+;     Dedicated logic registers      ; 343                                          ;
+; Total registers                    ; 343                                          ;
+; Total pins                         ; 31                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 50,176                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                        ; testingigo_all     ; testingigo_all     ;
+; Family name                                                  ; Cyclone II         ; Stratix            ;
+; Restructure Multiplexers                                     ; Off                ; Auto               ;
+; Ignore LCELL Buffers                                         ; On                 ; Off                ;
+; Perform WYSIWYG Primitive Resynthesis                        ; On                 ; Off                ;
+; Perform gate-level register retiming                         ; On                 ; Off                ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation          ; 1                  ; 1                  ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Allow register retiming to trade off Tsu/Tco with Fmax       ; On                 ; On                 ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                          ;
++-----------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path                                                                                ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                           ;
++-----------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/mycounter.v        ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/mycounter.v               ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/FX2_bidir.v        ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/FX2_bidir.v               ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/testingigo_all.bdf ; yes             ; User Block Diagram/Schematic File  ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/testingigo_all.bdf        ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/summator.v         ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/summator.v                ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/flashy_talk.bdf    ; yes             ; User Block Diagram/Schematic File  ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/flashy_talk.bdf           ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/control.v          ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/control.v                 ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/process_adc.v      ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/process_adc.v             ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/init_const.v       ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/init_const.v              ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/buffer.v           ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/buffer.v                  ;
+; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/datafilter.v       ; yes             ; User Verilog HDL File              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/datafilter.v              ;
+; dcfifo3.v                                                                                                       ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo3.v                 ;
+; scfifo.tdf                                                                                                      ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/scfifo.tdf                                                             ;
+; a_regfifo.inc                                                                                                   ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_regfifo.inc                                                          ;
+; a_dpfifo.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_dpfifo.inc                                                           ;
+; a_i2fifo.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_i2fifo.inc                                                           ;
+; a_fffifo.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_fffifo.inc                                                           ;
+; a_f2fifo.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_f2fifo.inc                                                           ;
+; aglobal80.inc                                                                                                   ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/aglobal80.inc                                                          ;
+; scfifo_on21.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/scfifo_on21.tdf        ;
+; a_dpfifo_vt21.tdf                                                                                               ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_dpfifo_vt21.tdf      ;
+; altsyncram_10e1.tdf                                                                                             ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_10e1.tdf    ;
+; altsyncram_sgj1.tdf                                                                                             ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_sgj1.tdf    ;
+; cntr_g5b.tdf                                                                                                    ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_g5b.tdf           ;
+; cntr_477.tdf                                                                                                    ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_477.tdf           ;
+; cntr_o6b.tdf                                                                                                    ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_o6b.tdf           ;
+; dcfifo2.v                                                                                                       ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo2.v                 ;
+; dcfifo0.v                                                                                                       ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo0.v                 ;
+; dcfifo.tdf                                                                                                      ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/dcfifo.tdf                                                             ;
+; lpm_counter.inc                                                                                                 ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/lpm_counter.inc                                                        ;
+; lpm_add_sub.inc                                                                                                 ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                        ;
+; altdpram.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/altdpram.inc                                                           ;
+; a_graycounter.inc                                                                                               ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_graycounter.inc                                                      ;
+; a_fefifo.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_fefifo.inc                                                           ;
+; a_gray2bin.inc                                                                                                  ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/a_gray2bin.inc                                                         ;
+; dffpipe.inc                                                                                                     ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/dffpipe.inc                                                            ;
+; alt_sync_fifo.inc                                                                                               ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                                      ;
+; lpm_compare.inc                                                                                                 ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/lpm_compare.inc                                                        ;
+; altsyncram_fifo.inc                                                                                             ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                                    ;
+; dcfifo_4dj1.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dcfifo_4dj1.tdf        ;
+; a_graycounter_f86.tdf                                                                                           ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_f86.tdf  ;
+; a_graycounter_41c.tdf                                                                                           ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_41c.tdf  ;
+; a_graycounter_31c.tdf                                                                                           ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_31c.tdf  ;
+; altsyncram_dhu.tdf                                                                                              ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_dhu.tdf     ;
+; dffpipe_c2e.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_c2e.tdf        ;
+; alt_synch_pipe_7u7.tdf                                                                                          ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/alt_synch_pipe_7u7.tdf ;
+; dffpipe_1v8.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_1v8.tdf        ;
+; alt_synch_pipe_8u7.tdf                                                                                          ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/alt_synch_pipe_8u7.tdf ;
+; dffpipe_2v8.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_2v8.tdf        ;
+; dcfifo4.v                                                                                                       ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo4.v                 ;
+; scfifo_jm21.tdf                                                                                                 ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/scfifo_jm21.tdf        ;
+; a_dpfifo_qs21.tdf                                                                                               ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_dpfifo_qs21.tdf      ;
+; altsyncram_ntd1.tdf                                                                                             ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_ntd1.tdf    ;
+; altsyncram_iej1.tdf                                                                                             ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_iej1.tdf    ;
+; cntr_f5b.tdf                                                                                                    ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_f5b.tdf           ;
+; cntr_s57.tdf                                                                                                    ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_s57.tdf           ;
+; lpm_mux2.v                                                                                                      ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/lpm_mux2.v                ;
+; lpm_mux.tdf                                                                                                     ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/lpm_mux.tdf                                                            ;
+; muxlut.inc                                                                                                      ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/muxlut.inc                                                             ;
+; bypassff.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/bypassff.inc                                                           ;
+; altshift.inc                                                                                                    ; yes             ; Megafunction                       ; c:/altera/80sp1/quartus/libraries/megafunctions/altshift.inc                                                           ;
+; mux_4nc.tdf                                                                                                     ; yes             ; Other                              ; //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/mux_4nc.tdf            ;
++-----------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 464            ;
+;                                             ;                ;
+; Total combinational functions               ; 464            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 176            ;
+;     -- 3 input functions                    ; 140            ;
+;     -- <=2 input functions                  ; 148            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 297            ;
+;     -- arithmetic mode                      ; 167            ;
+;                                             ;                ;
+; Total registers                             ; 343            ;
+;     -- Dedicated logic registers            ; 343            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 31             ;
+; Total memory bits                           ; 50176          ;
+; Maximum fan-out node                        ; External_clock ;
+; Maximum fan-out                             ; 245            ;
+; Total fan-out                               ; 4357           ;
+; Average fan-out                             ; 4.71           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                          ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                          ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |testingigo_all                                    ; 464 (3)           ; 343 (0)      ; 50176       ; 0            ; 0       ; 0         ; 31   ; 0            ; |testingigo_all                                                                                                                                                              ; work         ;
+;    |FX2_bidir:inst1|                               ; 38 (38)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|FX2_bidir:inst1                                                                                                                                              ; work         ;
+;    |control:inst|                                  ; 2 (2)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|control:inst                                                                                                                                                 ; work         ;
+;    |dcfifo0:inst4|                                 ; 32 (0)            ; 68 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4                                                                                                                                                ; work         ;
+;       |dcfifo:dcfifo_component|                    ; 32 (0)            ; 68 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component                                                                                                                        ; work         ;
+;          |dcfifo_4dj1:auto_generated|              ; 32 (14)           ; 68 (17)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated                                                                                             ; work         ;
+;             |a_graycounter_31c:wrptr_gp|           ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_31c:wrptr_gp                                                                  ; work         ;
+;             |a_graycounter_f86:rdptr_g1p|          ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_f86:rdptr_g1p                                                                 ; work         ;
+;             |alt_synch_pipe_7u7:rs_dgwp|           ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp                                                                  ; work         ;
+;                |dffpipe_1v8:dffpipe6|              ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_1v8:dffpipe6                                             ; work         ;
+;             |alt_synch_pipe_8u7:ws_dgrp|           ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp                                                                  ; work         ;
+;                |dffpipe_2v8:dffpipe9|              ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp|dffpipe_2v8:dffpipe9                                             ; work         ;
+;             |altsyncram_dhu:fifo_ram|              ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|altsyncram_dhu:fifo_ram                                                                     ; work         ;
+;             |dffpipe_c2e:rdaclr|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|dffpipe_c2e:rdaclr                                                                          ; work         ;
+;    |dcfifo2:inst5|                                 ; 58 (0)            ; 48 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5                                                                                                                                                ; work         ;
+;       |scfifo:scfifo_component|                    ; 58 (0)            ; 48 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component                                                                                                                        ; work         ;
+;          |scfifo_on21:auto_generated|              ; 58 (0)            ; 48 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated                                                                                             ; work         ;
+;             |a_dpfifo_vt21:dpfifo|                 ; 58 (29)           ; 48 (19)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo                                                                        ; work         ;
+;                |altsyncram_10e1:FIFOram|           ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram                                                ; work         ;
+;                   |altsyncram_sgj1:altsyncram1|    ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1                    ; work         ;
+;                |cntr_477:usedw_counter|            ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_477:usedw_counter                                                 ; work         ;
+;                |cntr_g5b:rd_ptr_msb|               ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_g5b:rd_ptr_msb                                                    ; work         ;
+;                |cntr_o6b:wr_ptr|                   ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_o6b:wr_ptr                                                        ; work         ;
+;    |dcfifo3:inst11|                                ; 60 (0)            ; 47 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11                                                                                                                                               ; work         ;
+;       |scfifo:scfifo_component|                    ; 60 (0)            ; 47 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component                                                                                                                       ; work         ;
+;          |scfifo_on21:auto_generated|              ; 60 (0)            ; 47 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated                                                                                            ; work         ;
+;             |a_dpfifo_vt21:dpfifo|                 ; 60 (31)           ; 47 (18)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo                                                                       ; work         ;
+;                |altsyncram_10e1:FIFOram|           ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram                                               ; work         ;
+;                   |altsyncram_sgj1:altsyncram1|    ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1                   ; work         ;
+;                |cntr_477:usedw_counter|            ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_477:usedw_counter                                                ; work         ;
+;                |cntr_g5b:rd_ptr_msb|               ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_g5b:rd_ptr_msb                                                   ; work         ;
+;                |cntr_o6b:wr_ptr|                   ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_o6b:wr_ptr                                                       ; work         ;
+;    |flashy_talk:inst12|                            ; 235 (1)           ; 134 (0)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12                                                                                                                                           ; work         ;
+;       |buffer:inst1|                               ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|buffer:inst1                                                                                                                              ; work         ;
+;       |datafilter:inst4|                           ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|datafilter:inst4                                                                                                                          ; work         ;
+;       |dcfifo4:inst2|                              ; 59 (0)            ; 46 (0)       ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2                                                                                                                             ; work         ;
+;          |scfifo:scfifo_component|                 ; 59 (0)            ; 46 (0)       ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component                                                                                                     ; work         ;
+;             |scfifo_jm21:auto_generated|           ; 59 (0)            ; 46 (0)       ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated                                                                          ; work         ;
+;                |a_dpfifo_qs21:dpfifo|              ; 59 (33)           ; 46 (20)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo                                                     ; work         ;
+;                   |altsyncram_ntd1:FIFOram|        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram                             ; work         ;
+;                      |altsyncram_iej1:altsyncram1| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram|altsyncram_iej1:altsyncram1 ; work         ;
+;                   |cntr_f5b:rd_ptr_msb|            ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|cntr_f5b:rd_ptr_msb                                 ; work         ;
+;                   |cntr_g5b:wr_ptr|                ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|cntr_g5b:wr_ptr                                     ; work         ;
+;                   |cntr_s57:usedw_counter|         ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|cntr_s57:usedw_counter                              ; work         ;
+;       |lpm_mux2:inst3|                             ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|lpm_mux2:inst3                                                                                                                            ; work         ;
+;          |lpm_mux:lpm_mux_component|               ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component                                                                                                  ; work         ;
+;             |mux_4nc:auto_generated|               ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component|mux_4nc:auto_generated                                                                           ; work         ;
+;       |mycounter:inst12|                           ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|mycounter:inst12                                                                                                                          ; work         ;
+;       |process_adc:inst|                           ; 77 (77)           ; 66 (66)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|flashy_talk:inst12|process_adc:inst                                                                                                                          ; work         ;
+;    |summator:inst3|                                ; 36 (36)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testingigo_all|summator:inst3                                                                                                                                               ; work         ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                             ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                                                                    ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|altsyncram_dhu:fifo_ram|ALTSYNCRAM                                                                     ; AUTO ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024  ; None ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1|ALTSYNCRAM                    ; AUTO ; True Dual Port   ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None ;
+; dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1|ALTSYNCRAM                   ; AUTO ; True Dual Port   ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram|altsyncram_iej1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port   ; 512          ; 64           ; 512          ; 64           ; 32768 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------+
+; State Machine - |testingigo_all|summator:inst3|state ;
++----------+----------+----------+---------------------+
+; Name     ; state.00 ; state.10 ; state.01            ;
++----------+----------+----------+---------------------+
+; state.00 ; 0        ; 0        ; 0                   ;
+; state.01 ; 1        ; 0        ; 1                   ;
+; state.10 ; 1        ; 1        ; 0                   ;
++----------+----------+----------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                                              ;
++-----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                                                                 ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++-----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|dffpipe_c2e:rdaclr|dffe7a[0] ; yes                                                              ; yes                                        ;
++-----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                           ; Reason for Removal                     ;
++-------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; control:inst|discriminator[0..2]                                                                                        ; Stuck at GND due to stuck port data_in ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa0               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa1               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa2               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa3               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa4               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa5               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa6               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa7               ; Lost fanout                            ;
+; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|parity_ff                  ; Lost fanout                            ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff                         ; Lost fanout                            ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|usedw_is_0_dff                    ; Lost fanout                            ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff      ; Lost fanout                            ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_1_dff ; Lost fanout                            ;
+; flashy_talk:inst12|mycounter:inst12|cout                                                                                ; Lost fanout                            ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_0_dff ; Lost fanout                            ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_2_dff ; Lost fanout                            ;
+; flashy_talk:inst12|mycounter:inst12|state                                                                               ; Lost fanout                            ;
+; flashy_talk:inst12|mycounter:inst12|count[2]                                                                            ; Lost fanout                            ;
+; Total Number of Removed Registers = 21                                                                                  ;                                        ;
++-------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 343   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 58    ;
+; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 181   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Gate-level Retiming                                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------+----------------+-----------------+
+; Register Name                                                                                                           ; Clock Name     ; Created/Deleted ;
++-------------------------------------------------------------------------------------------------------------------------+----------------+-----------------+
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff                         ; FX2_CLK        ; Deleted         ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|usedw_is_0_dff                    ; FX2_CLK        ; Deleted         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff      ; External_clock ; Deleted         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_1_dff ; External_clock ; Deleted         ;
+; flashy_talk:inst12|mycounter:inst12|cout                                                                                ; External_clock ; Deleted         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_0_dff ; External_clock ; Deleted         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_2_dff ; External_clock ; Deleted         ;
+; flashy_talk:inst12|mycounter:inst12|state                                                                               ; External_clock ; Deleted         ;
+; flashy_talk:inst12|mycounter:inst12|count[2]                                                                            ; External_clock ; Deleted         ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff~8                       ; FX2_CLK        ; Created         ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff~9                       ; FX2_CLK        ; Created         ;
+; dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff~10                      ; FX2_CLK        ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~16   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~17   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~18   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~19   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~20   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~21   ; External_clock ; Created         ;
+; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff~22   ; External_clock ; Created         ;
+; flashy_talk:inst12|mycounter:inst12|cout~36                                                                             ; External_clock ; Created         ;
+; flashy_talk:inst12|mycounter:inst12|cout~37                                                                             ; External_clock ; Created         ;
+; flashy_talk:inst12|mycounter:inst12|cout~38                                                                             ; External_clock ; Created         ;
+; flashy_talk:inst12|mycounter:inst12|cout~39                                                                             ; External_clock ; Created         ;
++-------------------------------------------------------------------------------------------------------------------------+----------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |testingigo_all|flashy_talk:inst12|process_adc:inst|counter[11]    ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |testingigo_all|flashy_talk:inst12|process_adc:inst|integrator[29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |testingigo_all|flashy_talk:inst12|process_adc:inst|integrator[0]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |testingigo_all|summator:inst3|sum[0]                              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |testingigo_all|flashy_talk:inst12|process_adc:inst|max[1]         ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |testingigo_all|FX2_bidir:inst1|state[0]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |testingigo_all|FX2_bidir:inst1|FIFO_DATAOUT[7]                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                      ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                       ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                     ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                      ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component ;
++---------------------------------+-------+------+-------------+
+; Assignment                      ; Value ; From ; To          ;
++---------------------------------+-------+------+-------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -           ;
++---------------------------------+-------+------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated                                                                          ;
++---------------------------------+-----------------------------------------------------------------------------------+-----------------+--------------------------+
+; Assignment                      ; Value                                                                             ; From            ; To                       ;
++---------------------------------+-----------------------------------------------------------------------------------+-----------------+--------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF                                                                               ; -               ; -                        ;
+; REMOVE_DUPLICATE_REGISTERS      ; OFF                                                                               ; -               ; -                        ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d101                                                                              ; -               ; -                        ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d102                                                                              ; -               ; -                        ;
+; SUPPRESS_DA_RULE_INTERNAL       ; s102                                                                              ; -               ; -                        ;
+; POWER_UP_LEVEL                  ; LOW                                                                               ; -               ; p0addr                   ;
+; CUT                             ; ON                                                                                ; rdptr_g         ; ws_dgrp|dffpipe9|dffe10a ;
+; SDC_STATEMENT                   ; set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_2v8:dffpipe9|dffe10a*         ; -               ; -                        ;
+; CUT                             ; ON                                                                                ; delayed_wrptr_g ; rs_dgwp|dffpipe6|dffe7a  ;
+; SDC_STATEMENT                   ; set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_1v8:dffpipe6|dffe7a*  ; -               ; -                        ;
++---------------------------------+-----------------------------------------------------------------------------------+-----------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p ;
++---------------------------+-------+------+--------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                       ;
++---------------------------+-------+------+--------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                        ;
+; POWER_UP_LEVEL            ; HIGH  ; -    ; counter_ffa0                                                             ;
+; POWER_UP_LEVEL            ; HIGH  ; -    ; parity_ff                                                                ;
++---------------------------+-------+------+--------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_31c:wrptr_gp ;
++---------------------------+-------+------+-------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                      ;
++---------------------------+-------+------+-------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                       ;
++---------------------------+-------+------+-------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|altsyncram_dhu:fifo_ram ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|dffpipe_c2e:rdaclr ;
++---------------------------------+-------+------+-----------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                        ;
++---------------------------------+-------+------+-----------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                         ;
+; PRESERVE_REGISTER               ; ON    ; -    ; -                                                         ;
+; SUPPRESS_DA_RULE_INTERNAL       ; c106  ; -    ; -                                                         ;
++---------------------------------+-------+------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                          ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                           ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_1v8:dffpipe6 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                     ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                      ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                          ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                           ;
++-----------------------+-------+------+-----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp|dffpipe_2v8:dffpipe9 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                     ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                      ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                        ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                         ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram|altsyncram_iej1:altsyncram1 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                    ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                     ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo3:inst11|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------+
+; Parameter Name          ; Value       ; Type                                        ;
++-------------------------+-------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                              ;
+; lpm_width               ; 8           ; Signed Integer                              ;
+; LPM_NUMWORDS            ; 1024        ; Signed Integer                              ;
+; LPM_WIDTHU              ; 10          ; Signed Integer                              ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                     ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                     ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                     ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                     ;
+; ADD_RAM_OUTPUT_REGISTER ; ON          ; Untyped                                     ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                     ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                     ;
+; USE_EAB                 ; ON          ; Untyped                                     ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                     ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                     ;
+; CBXI_PARAMETER          ; scfifo_on21 ; Untyped                                     ;
++-------------------------+-------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo2:inst5|scfifo:scfifo_component ;
++-------------------------+-------------+--------------------------------------------+
+; Parameter Name          ; Value       ; Type                                       ;
++-------------------------+-------------+--------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                             ;
+; lpm_width               ; 8           ; Signed Integer                             ;
+; LPM_NUMWORDS            ; 1024        ; Signed Integer                             ;
+; LPM_WIDTHU              ; 10          ; Signed Integer                             ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                    ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                    ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                    ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                    ;
+; ADD_RAM_OUTPUT_REGISTER ; ON          ; Untyped                                    ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                    ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                    ;
+; USE_EAB                 ; ON          ; Untyped                                    ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                    ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                    ;
+; CBXI_PARAMETER          ; scfifo_on21 ; Untyped                                    ;
++-------------------------+-------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component ;
++-------------------------+-------------+--------------------------------------------+
+; Parameter Name          ; Value       ; Type                                       ;
++-------------------------+-------------+--------------------------------------------+
+; WIDTH_BYTEENA           ; 1           ; Untyped                                    ;
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                             ;
+; LPM_WIDTH               ; 8           ; Signed Integer                             ;
+; LPM_NUMWORDS            ; 128         ; Signed Integer                             ;
+; LPM_WIDTHU              ; 7           ; Signed Integer                             ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                    ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                    ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                    ;
+; USE_EAB                 ; ON          ; Untyped                                    ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                    ;
+; DELAY_RDUSEDW           ; 1           ; Untyped                                    ;
+; DELAY_WRUSEDW           ; 1           ; Untyped                                    ;
+; RDSYNC_DELAYPIPE        ; 4           ; Signed Integer                             ;
+; WRSYNC_DELAYPIPE        ; 4           ; Signed Integer                             ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                                    ;
+; MAXIMIZE_SPEED          ; 7           ; Untyped                                    ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                    ;
+; ADD_USEDW_MSB_BIT       ; OFF         ; Untyped                                    ;
+; WRITE_ACLR_SYNCH        ; OFF         ; Untyped                                    ;
+; CBXI_PARAMETER          ; dcfifo_4dj1 ; Untyped                                    ;
++-------------------------+-------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                          ;
++-------------------------+-------------+---------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                ;
+; lpm_width               ; 64          ; Signed Integer                                                ;
+; LPM_NUMWORDS            ; 512         ; Signed Integer                                                ;
+; LPM_WIDTHU              ; 9           ; Signed Integer                                                ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                                       ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                       ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                       ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                       ;
+; ADD_RAM_OUTPUT_REGISTER ; ON          ; Untyped                                                       ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                       ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                       ;
+; USE_EAB                 ; ON          ; Untyped                                                       ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                       ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                                       ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                       ;
+; CBXI_PARAMETER          ; scfifo_jm21 ; Untyped                                                       ;
++-------------------------+-------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: flashy_talk:inst12|datafilter:inst4 ;
++----------------+--------------------------+--------------------------------------+
+; Parameter Name ; Value                    ; Type                                 ;
++----------------+--------------------------+--------------------------------------+
+; constant       ; 000000000000000000111111 ; Unsigned Binary                      ;
++----------------+--------------------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component ;
++------------------------+------------+--------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                               ;
++------------------------+------------+--------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                     ;
+; LPM_WIDTH              ; 8          ; Signed Integer                                                     ;
+; LPM_SIZE               ; 8          ; Signed Integer                                                     ;
+; LPM_WIDTHS             ; 3          ; Signed Integer                                                     ;
+; LPM_PIPELINE           ; 0          ; Untyped                                                            ;
+; CBXI_PARAMETER         ; mux_4nc    ; Untyped                                                            ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                            ;
++------------------------+------------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                          ;
++----------------------------+----------------------------------------------------------+
+; Name                       ; Value                                                    ;
++----------------------------+----------------------------------------------------------+
+; Number of entity instances ; 3                                                        ;
+; Entity Instance            ; dcfifo3:inst11|scfifo:scfifo_component                   ;
+;     -- FIFO Type           ; Single Clock                                             ;
+;     -- lpm_width           ; 8                                                        ;
+;     -- LPM_NUMWORDS        ; 1024                                                     ;
+;     -- LPM_SHOWAHEAD       ; ON                                                       ;
+;     -- USE_EAB             ; ON                                                       ;
+; Entity Instance            ; dcfifo2:inst5|scfifo:scfifo_component                    ;
+;     -- FIFO Type           ; Single Clock                                             ;
+;     -- lpm_width           ; 8                                                        ;
+;     -- LPM_NUMWORDS        ; 1024                                                     ;
+;     -- LPM_SHOWAHEAD       ; ON                                                       ;
+;     -- USE_EAB             ; ON                                                       ;
+; Entity Instance            ; flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                             ;
+;     -- lpm_width           ; 64                                                       ;
+;     -- LPM_NUMWORDS        ; 512                                                      ;
+;     -- LPM_SHOWAHEAD       ; ON                                                       ;
+;     -- USE_EAB             ; ON                                                       ;
++----------------------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; dcfifo Parameter Settings by Entity Instance                       ;
++----------------------------+---------------------------------------+
+; Name                       ; Value                                 ;
++----------------------------+---------------------------------------+
+; Number of entity instances ; 1                                     ;
+; Entity Instance            ; dcfifo0:inst4|dcfifo:dcfifo_component ;
+;     -- FIFO Type           ; Dual Clock                            ;
+;     -- LPM_WIDTH           ; 8                                     ;
+;     -- LPM_NUMWORDS        ; 128                                   ;
+;     -- LPM_SHOWAHEAD       ; ON                                    ;
+;     -- USE_EAB             ; ON                                    ;
++----------------------------+---------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.0 Build 231 07/10/2008 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Oct 07 18:53:57 2008
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off flashy_get -c testingigo_all
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/mycounter.v
+    Info: Found entity 1: mycounter
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/FX2_bidir.v
+    Info: Found entity 1: FX2_bidir
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/apdtimer_all.bdf
+    Info: Found entity 1: apdtimer_all
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/allclickreg.v
+    Info: Found entity 1: allclickreg
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/testingigo_all.bdf
+    Info: Found entity 1: testingigo_all
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/clicklatch.v
+    Info: Found entity 1: clicklatch
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/runonce.v
+    Info: Found entity 1: runonce
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/summator.v
+    Info: Found entity 1: summator
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/flashy_talk.bdf
+    Info: Found entity 1: flashy_talk
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/control.v
+    Info: Found entity 1: control
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/process_adc.v
+    Info: Found entity 1: process_adc
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/init_const.v
+    Info: Found entity 1: init_const
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/buffer.v
+    Info: Found entity 1: buffer
+Info: Found 1 design units, including 1 entities, in source file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/datafilter.v
+    Info: Found entity 1: datafilter
+Info: Elaborating entity "testingigo_all" for the top level hierarchy
+Info: Elaborating entity "FX2_bidir" for hierarchy "FX2_bidir:inst1"
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(42): object "FIFO3_data_available" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(43): object "FIFO4_ready_to_accept_data" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(44): object "FIFO5_ready_to_accept_data" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at FX2_bidir.v(110): truncated value with size 32 to match size of target (8)
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo3
+Info: Elaborating entity "dcfifo3" for hierarchy "dcfifo3:inst11"
+Info: Elaborating entity "scfifo" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "dcfifo3:inst11|scfifo:scfifo_component"
+Info: Instantiated megafunction "dcfifo3:inst11|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "ON"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "1024"
+    Info: Parameter "lpm_showahead" = "ON"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "10"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/scfifo_on21.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: scfifo_on21
+Info: Elaborating entity "scfifo_on21" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_dpfifo_vt21.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: a_dpfifo_vt21
+Info: Elaborating entity "a_dpfifo_vt21" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_10e1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: altsyncram_10e1
+Info: Elaborating entity "altsyncram_10e1" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_sgj1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: altsyncram_sgj1
+Info: Elaborating entity "altsyncram_sgj1" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|altsyncram_10e1:FIFOram|altsyncram_sgj1:altsyncram1"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_g5b.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: cntr_g5b
+Info: Elaborating entity "cntr_g5b" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_g5b:rd_ptr_msb"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_477.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: cntr_477
+Info: Elaborating entity "cntr_477" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_477:usedw_counter"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_o6b.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: cntr_o6b
+Info: Elaborating entity "cntr_o6b" for hierarchy "dcfifo3:inst11|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|cntr_o6b:wr_ptr"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo2
+Info: Elaborating entity "dcfifo2" for hierarchy "dcfifo2:inst5"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo0.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo0
+Info: Elaborating entity "dcfifo0" for hierarchy "dcfifo0:inst4"
+Info: Elaborating entity "dcfifo" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component" with the following parameter:
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_hint" = "MAXIMIZE_SPEED=7,"
+    Info: Parameter "lpm_numwords" = "128"
+    Info: Parameter "lpm_showahead" = "ON"
+    Info: Parameter "lpm_type" = "dcfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "7"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "rdsync_delaypipe" = "4"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+    Info: Parameter "wrsync_delaypipe" = "4"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dcfifo_4dj1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo_4dj1
+Info: Elaborating entity "dcfifo_4dj1" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_f86.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: a_graycounter_f86
+Info: Elaborating entity "a_graycounter_f86" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_f86:rdptr_g1p"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_41c.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: a_graycounter_41c
+Info: Elaborating entity "a_graycounter_41c" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_graycounter_31c.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: a_graycounter_31c
+Info: Elaborating entity "a_graycounter_31c" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_31c:wrptr_gp"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_dhu.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: altsyncram_dhu
+Info: Elaborating entity "altsyncram_dhu" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|altsyncram_dhu:fifo_ram"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_c2e.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dffpipe_c2e
+Info: Elaborating entity "dffpipe_c2e" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|dffpipe_c2e:rdaclr"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/alt_synch_pipe_7u7.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: alt_synch_pipe_7u7
+Info: Elaborating entity "alt_synch_pipe_7u7" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_1v8.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dffpipe_1v8
+Info: Elaborating entity "dffpipe_1v8" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_1v8:dffpipe6"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/alt_synch_pipe_8u7.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: alt_synch_pipe_8u7
+Info: Elaborating entity "alt_synch_pipe_8u7" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/dffpipe_2v8.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dffpipe_2v8
+Info: Elaborating entity "dffpipe_2v8" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|alt_synch_pipe_8u7:ws_dgrp|dffpipe_2v8:dffpipe9"
+Info: Elaborating entity "flashy_talk" for hierarchy "flashy_talk:inst12"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/dcfifo4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo4
+Info: Elaborating entity "dcfifo4" for hierarchy "flashy_talk:inst12|dcfifo4:inst2"
+Info: Elaborating entity "scfifo" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component"
+Info: Instantiated megafunction "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "ON"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "512"
+    Info: Parameter "lpm_showahead" = "ON"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "64"
+    Info: Parameter "lpm_widthu" = "9"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/scfifo_jm21.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: scfifo_jm21
+Info: Elaborating entity "scfifo_jm21" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/a_dpfifo_qs21.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: a_dpfifo_qs21
+Info: Elaborating entity "a_dpfifo_qs21" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_ntd1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: altsyncram_ntd1
+Info: Elaborating entity "altsyncram_ntd1" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/altsyncram_iej1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: altsyncram_iej1
+Info: Elaborating entity "altsyncram_iej1" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|altsyncram_ntd1:FIFOram|altsyncram_iej1:altsyncram1"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_f5b.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: cntr_f5b
+Info: Elaborating entity "cntr_f5b" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|cntr_f5b:rd_ptr_msb"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/cntr_s57.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: cntr_s57
+Info: Elaborating entity "cntr_s57" for hierarchy "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|cntr_s57:usedw_counter"
+Info: Elaborating entity "datafilter" for hierarchy "flashy_talk:inst12|datafilter:inst4"
+Warning (10230): Verilog HDL assignment warning at datafilter.v(17): truncated value with size 32 to match size of target (1)
+Info: Elaborating entity "process_adc" for hierarchy "flashy_talk:inst12|process_adc:inst"
+Info: Elaborating entity "buffer" for hierarchy "flashy_talk:inst12|buffer:inst1"
+Info: Elaborating entity "mycounter" for hierarchy "flashy_talk:inst12|mycounter:inst12"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/lpm_mux2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux2
+Info: Elaborating entity "lpm_mux2" for hierarchy "flashy_talk:inst12|lpm_mux2:inst3"
+Info: Elaborating entity "lpm_mux" for hierarchy "flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component"
+Info: Instantiated megafunction "flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component" with the following parameter:
+    Info: Parameter "lpm_size" = "8"
+    Info: Parameter "lpm_type" = "LPM_MUX"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widths" = "3"
+Warning: Using design file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/db/mux_4nc.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: mux_4nc
+Info: Elaborating entity "mux_4nc" for hierarchy "flashy_talk:inst12|lpm_mux2:inst3|lpm_mux:lpm_mux_component|mux_4nc:auto_generated"
+Info: Elaborating entity "control" for hierarchy "control:inst"
+Info: Elaborating entity "summator" for hierarchy "summator:inst3"
+Info: Elaborating entity "init_const" for hierarchy "init_const:inst2"
+Warning (14130): Reduced register "control:inst|discriminator[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "control:inst|discriminator[1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "control:inst|discriminator[2]" with stuck data_in port to stuck value GND
+Info: State machine "|testingigo_all|summator:inst3|state" contains 3 states
+Info: Selected Auto state machine encoding method for state machine "|testingigo_all|summator:inst3|state"
+Info: Encoding result for state machine "|testingigo_all|summator:inst3|state"
+    Info: Completed encoding using 3 state bits
+        Info: Encoded state bit "summator:inst3|state.00"
+        Info: Encoded state bit "summator:inst3|state.10"
+        Info: Encoded state bit "summator:inst3|state.01"
+    Info: State "|testingigo_all|summator:inst3|state.00" uses code string "000"
+    Info: State "|testingigo_all|summator:inst3|state.01" uses code string "101"
+    Info: State "|testingigo_all|summator:inst3|state.10" uses code string "110"
+Info: Resynthesizing 0 WYSIWYG logic cells and I/Os using "balanced" technology mapper which leaves 186 WYSIWYG logic cells and I/Os untouched
+Info: Performing gate-level register retiming
+Info: Not allowed to move 93 registers
+    Info: Not allowed to move at least 16 registers because they are in a sequence of registers directly fed by input pins
+    Info: Not allowed to move at least 3 registers because they feed output pins directly
+    Info: Not allowed to move at least 38 registers because they are fed by registers in a different clock domain
+    Info: Not allowed to move at least 35 registers because they feed registers in a different clock domain
+    Info: Not allowed to move at least 1 registers due to user assignments
+Info: Quartus II software applied gate-level register retiming to 2 clock domains
+    Info: Quartus II software applied gate-level register retiming to clock "FX2_CLK": created 3 new registers, removed 2 registers, left 106 registers untouched
+    Info: Quartus II software applied gate-level register retiming to clock "External_clock": created 11 new registers, removed 7 registers, left 80 registers untouched
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "FX2_PA_3" is stuck at VCC
+Info: 18 registers lost all their fanouts during netlist optimizations. The first 18 are displayed below.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa0" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa1" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa2" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa3" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa4" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa5" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa6" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|counter_ffa7" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_4dj1:auto_generated|a_graycounter_41c:wrptr_g1p|parity_ff" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|empty_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "dcfifo2:inst5|scfifo:scfifo_component|scfifo_on21:auto_generated|a_dpfifo_vt21:dpfifo|usedw_is_0_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|empty_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_1_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|mycounter:inst12|cout" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_0_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|dcfifo4:inst2|scfifo:scfifo_component|scfifo_jm21:auto_generated|a_dpfifo_qs21:dpfifo|usedw_is_2_dff" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|mycounter:inst12|state" lost all its fanouts during netlist optimizations.
+    Info: Register "flashy_talk:inst12|mycounter:inst12|count[2]" lost all its fanouts during netlist optimizations.
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "FX2_PA_7"
+    Warning (15610): No output dependent on input pin "FX2_flags[1]"
+Info: Implemented 721 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 602 logic cells
+    Info: Implemented 88 RAM segments
+Info: Generated suppressed messages file //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/testingigo_all.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 173 megabytes
+    Info: Processing ended: Tue Oct 07 18:54:18 2008
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:08
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in //Elwood/84_pl/844/internal/OTD Public/844.03/Aaron/_development_fpga/verilog/Flashy-getter2/testingigo_all.map.smsg.
+
+

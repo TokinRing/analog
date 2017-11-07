@@ -1,0 +1,1084 @@
+Analysis & Synthesis report for testingigo
+Thu Jan 11 18:29:19 2007
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component
+  6. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated
+  7. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|altsyncram_8941:fifo_ram
+  8. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers
+  9. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers|dffpipe_af9:dffpipe9
+ 10. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers
+ 11. Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers|dffpipe_bf9:dffpipe13
+ 12. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component
+ 13. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated
+ 14. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dpram_evr:fiforam|altsyncram_vof1:altsyncram3
+ 15. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rdbuw
+ 16. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rdusedw
+ 17. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rs_dbwp
+ 18. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp
+ 19. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp|dffpipe_hd9:dffpipe3
+ 20. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_wr_dbuw
+ 21. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_wrusedw
+ 22. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp
+ 23. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp|dffpipe_id9:dffpipe7
+ 24. Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_ws_nbrp
+ 25. Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component
+ 26. Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel
+ 27. Parameter Settings for User Entity Instance: apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component
+ 28. Parameter Settings for User Entity Instance: apdtimer:inst9|MUX:inst20
+ 29. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_decode3:inst25|lpm_decode:lpm_decode_component
+ 30. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter3:inst26|lpm_counter:lpm_counter_component
+ 31. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant0:inst17|lpm_constant:lpm_constant_component
+ 32. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter2:inst9|lpm_counter:lpm_counter_component
+ 33. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant1:inst18|lpm_constant:lpm_constant_component
+ 34. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant3:inst31|lpm_constant:lpm_constant_component
+ 35. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant4:inst32|lpm_constant:lpm_constant_component
+ 36. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant2:inst38|lpm_constant:lpm_constant_component
+ 37. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter10:inst29|lpm_counter:lpm_counter_component
+ 38. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_mux0:inst10|lpm_mux:lpm_mux_component
+ 39. Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_mux1:inst27|lpm_mux:lpm_mux_component
+ 40. dcfifo Parameter Settings by Entity Instance
+ 41. scfifo Parameter Settings by Entity Instance
+ 42. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Thu Jan 11 18:29:19 2007            ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Web Edition ;
+; Revision Name               ; testingigo                                   ;
+; Top-level Entity Name       ; testingigo                                   ;
+; Family                      ; Cyclone                                      ;
++-----------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP1C3T100C8        ;                    ;
+; Top-level entity name                                              ; testingigo         ; testingigo         ;
+; Family name                                                        ; Cyclone            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                  ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+
+; FX2_bidir.v                      ; yes             ; User Verilog HDL File        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/FX2_bidir.v               ;
+; clickreg.v                       ; yes             ; User Verilog HDL File        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/clickreg.v                ;
+; testingigo.bdf                   ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/testingigo.bdf            ;
+; dcfifo0.v                        ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/dcfifo0.v                 ;
+; dcfifo.tdf                       ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/dcfifo.tdf                                                      ;
+; lpm_counter.inc                  ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_counter.inc                                                 ;
+; lpm_add_sub.inc                  ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_add_sub.inc                                                 ;
+; altdpram.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/altdpram.inc                                                    ;
+; a_graycounter.inc                ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_graycounter.inc                                               ;
+; a_fefifo.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_fefifo.inc                                                    ;
+; a_gray2bin.inc                   ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_gray2bin.inc                                                  ;
+; dffpipe.inc                      ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/dffpipe.inc                                                     ;
+; alt_sync_fifo.inc                ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/alt_sync_fifo.inc                                               ;
+; lpm_compare.inc                  ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_compare.inc                                                 ;
+; altsyncram_fifo.inc              ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/altsyncram_fifo.inc                                             ;
+; aglobal60.inc                    ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/aglobal60.inc                                                   ;
+; db/dcfifo_jq91.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dcfifo_jq91.tdf        ;
+; db/a_gray2bin_46b.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_gray2bin_46b.tdf     ;
+; db/a_graycounter_t16.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_graycounter_t16.tdf  ;
+; db/a_graycounter_326.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_graycounter_326.tdf  ;
+; db/altsyncram_8941.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/altsyncram_8941.tdf    ;
+; db/alt_synch_pipe_ee8.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/alt_synch_pipe_ee8.tdf ;
+; db/dffpipe_af9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dffpipe_af9.tdf        ;
+; db/alt_synch_pipe_fe8.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/alt_synch_pipe_fe8.tdf ;
+; db/dffpipe_bf9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dffpipe_bf9.tdf        ;
+; db/add_sub_qvb.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/add_sub_qvb.tdf        ;
+; db/cntr_908.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_908.tdf           ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/scfifo.tdf                                                      ;
+; a_regfifo.inc                    ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_regfifo.inc                                                   ;
+; a_dpfifo.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_dpfifo.inc                                                    ;
+; a_i2fifo.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_i2fifo.inc                                                    ;
+; a_fffifo.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_fffifo.inc                                                    ;
+; a_f2fifo.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/a_f2fifo.inc                                                    ;
+; a_fffifo.tdf                     ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/a_fffifo.tdf                                                    ;
+; lpm_mux.inc                      ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_mux.inc                                                     ;
+; lpm_ff.inc                       ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_ff.inc                                                      ;
+; lpm_ff.tdf                       ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_ff.tdf                                                      ;
+; lpm_constant.inc                 ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_constant.inc                                                ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_mux.tdf                                                     ;
+; muxlut.inc                       ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/muxlut.inc                                                      ;
+; bypassff.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/bypassff.inc                                                    ;
+; altshift.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/altshift.inc                                                    ;
+; db/mux_afc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/mux_afc.tdf            ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_counter.tdf                                                 ;
+; lpm_decode.inc                   ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/lpm_decode.inc                                                  ;
+; cmpconst.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/cmpconst.inc                                                    ;
+; dffeea.inc                       ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/dffeea.inc                                                      ;
+; alt_synch_counter.inc            ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/alt_synch_counter.inc                                           ;
+; alt_synch_counter_f.inc          ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/alt_synch_counter_f.inc                                         ;
+; alt_counter_f10ke.inc            ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/alt_counter_f10ke.inc                                           ;
+; alt_counter_stratix.inc          ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/alt_counter_stratix.inc                                         ;
+; db/cntr_tue.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_tue.tdf           ;
+; a_fefifo.tdf                     ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/a_fefifo.tdf                                                    ;
+; lpm_compare.tdf                  ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_compare.tdf                                                 ;
+; comptree.inc                     ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/comptree.inc                                                    ;
+; db/cmpr_33g.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cmpr_33g.tdf           ;
+; apdtimer.bdf                     ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/apdtimer.bdf              ;
+; dcfifo1.v                        ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/dcfifo1.v                 ;
+; db/dcfifo_pma1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dcfifo_pma1.tdf        ;
+; db/a_fefifo_mrc.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_fefifo_mrc.tdf       ;
+; db/a_fefifo_rrc.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_fefifo_rrc.tdf       ;
+; db/a_gray2bin_l4b.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_gray2bin_l4b.tdf     ;
+; db/a_graycounter_q06.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_graycounter_q06.tdf  ;
+; db/a_graycounter_p06.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/a_graycounter_p06.tdf  ;
+; db/dpram_evr.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dpram_evr.tdf          ;
+; db/altsyncram_vof1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/altsyncram_vof1.tdf    ;
+; db/dffpipe_bd9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dffpipe_bd9.tdf        ;
+; db/alt_synch_pipe_nc8.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/alt_synch_pipe_nc8.tdf ;
+; db/dffpipe_hd9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dffpipe_hd9.tdf        ;
+; db/alt_synch_pipe_oc8.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/alt_synch_pipe_oc8.tdf ;
+; db/dffpipe_id9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/dffpipe_id9.tdf        ;
+; db/add_sub_bub.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/add_sub_bub.tdf        ;
+; db/cntr_5v7.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_5v7.tdf           ;
+; MUX.tdf                          ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/MUX.tdf                                                         ;
+; db/mux_8fc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/mux_8fc.tdf            ;
+; lpm_decode3.v                    ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_decode3.v             ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_decode.tdf                                                  ;
+; declut.inc                       ; yes             ; Other                        ; c:/altera/quartus60/libraries/megafunctions/declut.inc                                                      ;
+; db/decode_hjf.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/decode_hjf.tdf         ;
+; lpm_counter3.v                   ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_counter3.v            ;
+; db/cntr_8ni.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_8ni.tdf           ;
+; lpm_constant0.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_constant0.v           ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                 ; c:/altera/quartus60/libraries/megafunctions/lpm_constant.tdf                                                ;
+; lpm_counter2.v                   ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_counter2.v            ;
+; db/cntr_obi.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_obi.tdf           ;
+; lpm_constant1.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_constant1.v           ;
+; lpm_constant3.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_constant3.v           ;
+; lpm_constant4.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_constant4.v           ;
+; lpm_constant2.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_constant2.v           ;
+; lpm_counter10.v                  ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_counter10.v           ;
+; db/cntr_vrh.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/cntr_vrh.tdf           ;
+; lpm_mux0.v                       ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_mux0.v                ;
+; db/mux_sgc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/mux_sgc.tdf            ;
+; lpm_mux1.v                       ; yes             ; Other                        ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/lpm_mux1.v                ;
+; db/mux_dfc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/pdclab/Desktop/FPGA VIs/SaxoRevE_StartupKit/testingfifo/db/mux_dfc.tdf            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component ;
++---------------------------------+-------+------+-------------+
+; Assignment                      ; Value ; From ; To          ;
++---------------------------------+-------+------+-------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -           ;
++---------------------------------+-------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated                                                 ;
++---------------------------------+-------+------------------------------------------------------+----------------------------------------+
+; Assignment                      ; Value ; From                                                 ; To                                     ;
++---------------------------------+-------+------------------------------------------------------+----------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -                                                    ; -                                      ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d102  ; -                                                    ; -                                      ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d101  ; -                                                    ; -                                      ;
+; CUT                             ; ON    ; read_counter_for_write|power_modified_counter_values ; write_sync_registers|dffpipe13|dffe14a ;
+; CUT                             ; ON    ; delayed_wrptr_g                                      ; read_sync_registers|dffpipe9|dffe10a   ;
++---------------------------------+-------+------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|altsyncram_8941:fifo_ram ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers ;
++-----------------------+-------+------+-----------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                      ;
++-----------------------+-------+------+-----------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                       ;
++-----------------------+-------+------+-----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers|dffpipe_af9:dffpipe9 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                  ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers ;
++-----------------------+-------+------+------------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                       ;
++-----------------------+-------+------+------------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                        ;
++-----------------------+-------+------+------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers|dffpipe_bf9:dffpipe13 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                   ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                    ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component ;
++---------------------------------+-------+------+----------------------------+
+; Assignment                      ; Value ; From ; To                         ;
++---------------------------------+-------+------+----------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                          ;
++---------------------------------+-------+------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated            ;
++---------------------------------+-------+---------------------------------------+---------------------------------+
+; Assignment                      ; Value ; From                                  ; To                              ;
++---------------------------------+-------+---------------------------------------+---------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -                                     ; -                               ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d101  ; -                                     ; -                               ;
+; SUPPRESS_DA_RULE_INTERNAL       ; d102  ; -                                     ; -                               ;
+; CUT                             ; ON    ; write_delay_cycle                     ; dffpipe_rs_dgwp|dffpipe3|dffe4a ;
+; CUT                             ; ON    ; rdptr_g|power_modified_counter_values ; dffpipe_ws_dgrp|dffpipe7|dffe8a ;
++---------------------------------+-------+---------------------------------------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dpram_evr:fiforam|altsyncram_vof1:altsyncram3 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                     ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                      ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rdbuw ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                              ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                               ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rdusedw ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                 ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rs_dbwp ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                 ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                                 ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                                  ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp|dffpipe_hd9:dffpipe3 ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                            ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                             ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_wr_dbuw ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                 ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_wrusedw ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                 ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                                 ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                                  ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp|dffpipe_id9:dffpipe7 ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                            ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                             ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_ws_nbrp ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                 ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component ;
++-------------------------+-------------+--------------------------------------------+
+; Parameter Name          ; Value       ; Type                                       ;
++-------------------------+-------------+--------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                             ;
+; LPM_WIDTH               ; 8           ; Integer                                    ;
+; LPM_NUMWORDS            ; 4096        ; Integer                                    ;
+; LPM_WIDTHU              ; 12          ; Integer                                    ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                    ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                    ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                    ;
+; USE_EAB                 ; ON          ; Untyped                                    ;
+; ADD_RAM_OUTPUT_REGISTER ; ON          ; Untyped                                    ;
+; DELAY_RDUSEDW           ; 1           ; Untyped                                    ;
+; DELAY_WRUSEDW           ; 1           ; Untyped                                    ;
+; RDSYNC_DELAYPIPE        ; 3           ; Untyped                                    ;
+; WRSYNC_DELAYPIPE        ; 3           ; Untyped                                    ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                                    ;
+; DEVICE_FAMILY           ; Cyclone     ; Untyped                                    ;
+; CBXI_PARAMETER          ; dcfifo_jq91 ; Untyped                                    ;
++-------------------------+-------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel ;
++-------------------------+---------+-------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value   ; Type                                                                                            ;
++-------------------------+---------+-------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON      ; AUTO_CARRY                                                                                      ;
+; IGNORE_CARRY_BUFFERS    ; OFF     ; IGNORE_CARRY                                                                                    ;
+; AUTO_CASCADE_CHAINS     ; ON      ; AUTO_CASCADE                                                                                    ;
+; IGNORE_CASCADE_BUFFERS  ; OFF     ; IGNORE_CASCADE                                                                                  ;
+; lpm_width               ; 8       ; Untyped                                                                                         ;
+; LPM_NUMWORDS            ; 3       ; Untyped                                                                                         ;
+; LPM_WIDTHU              ; 2       ; Untyped                                                                                         ;
+; LPM_SHOWAHEAD           ; ON      ; Untyped                                                                                         ;
+; UNDERFLOW_CHECKING      ; ON      ; Untyped                                                                                         ;
+; OVERFLOW_CHECKING       ; ON      ; Untyped                                                                                         ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF     ; Untyped                                                                                         ;
+; ADD_RAM_OUTPUT_REGISTER ; ON      ; Untyped                                                                                         ;
+; ALMOST_FULL_VALUE       ; 0       ; Untyped                                                                                         ;
+; ALMOST_EMPTY_VALUE      ; 0       ; Untyped                                                                                         ;
+; USE_EAB                 ; OFF     ; Untyped                                                                                         ;
+; MAXIMIZE_SPEED          ; 5       ; Untyped                                                                                         ;
+; DEVICE_FAMILY           ; Cyclone ; Untyped                                                                                         ;
+; OPTIMIZE_FOR_SPEED      ; 5       ; Untyped                                                                                         ;
+; CBXI_PARAMETER          ; NOTHING ; Untyped                                                                                         ;
++-------------------------+---------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component ;
++-------------------------+-------------+-----------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                      ;
++-------------------------+-------------+-----------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                            ;
+; LPM_WIDTH               ; 32          ; Integer                                                   ;
+; LPM_NUMWORDS            ; 16          ; Integer                                                   ;
+; LPM_WIDTHU              ; 4           ; Integer                                                   ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                   ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                   ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                   ;
+; USE_EAB                 ; ON          ; Untyped                                                   ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                   ;
+; DELAY_RDUSEDW           ; 1           ; Untyped                                                   ;
+; DELAY_WRUSEDW           ; 1           ; Untyped                                                   ;
+; RDSYNC_DELAYPIPE        ; 3           ; Untyped                                                   ;
+; WRSYNC_DELAYPIPE        ; 3           ; Untyped                                                   ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                                                   ;
+; DEVICE_FAMILY           ; Cyclone     ; Untyped                                                   ;
+; CBXI_PARAMETER          ; dcfifo_pma1 ; Untyped                                                   ;
++-------------------------+-------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|MUX:inst20 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 5     ; Untyped                                       ;
+; WIDTHS         ; 3     ; Untyped                                       ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_decode3:inst25|lpm_decode:lpm_decode_component ;
++------------------------+------------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                                     ;
++------------------------+------------+--------------------------------------------------------------------------+
+; LPM_WIDTH              ; 3          ; Integer                                                                  ;
+; LPM_DECODES            ; 8          ; Integer                                                                  ;
+; LPM_PIPELINE           ; 0          ; Untyped                                                                  ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                                                                  ;
+; DEVICE_FAMILY          ; Cyclone    ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; decode_hjf ; Untyped                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                           ;
++------------------------+------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter3:inst26|lpm_counter:lpm_counter_component ;
++------------------------+-------------+----------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                       ;
++------------------------+-------------+----------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                             ;
+; LPM_WIDTH              ; 3           ; Integer                                                                    ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                    ;
+; LPM_MODULUS            ; 5           ; Integer                                                                    ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                    ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                    ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                    ;
+; DEVICE_FAMILY          ; Cyclone     ; Untyped                                                                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                         ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                         ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                    ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                    ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                    ;
+; CBXI_PARAMETER         ; cntr_8ni    ; Untyped                                                                    ;
++------------------------+-------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant0:inst17|lpm_constant:lpm_constant_component ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                      ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 3       ; Integer                                                                                   ;
+; LPM_CVALUE     ; 2       ; Integer                                                                                   ;
+; CBXI_PARAMETER ; NOTHING ; Untyped                                                                                   ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter2:inst9|lpm_counter:lpm_counter_component ;
++------------------------+-------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                      ;
++------------------------+-------------+---------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                            ;
+; LPM_WIDTH              ; 27          ; Integer                                                                   ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                   ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                   ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                   ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                   ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                   ;
+; DEVICE_FAMILY          ; Cyclone     ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                   ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                        ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                        ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                   ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                   ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; cntr_obi    ; Untyped                                                                   ;
++------------------------+-------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant1:inst18|lpm_constant:lpm_constant_component ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                      ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 3       ; Integer                                                                                   ;
+; LPM_CVALUE     ; 0       ; Integer                                                                                   ;
+; CBXI_PARAMETER ; NOTHING ; Untyped                                                                                   ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant3:inst31|lpm_constant:lpm_constant_component ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                      ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 3       ; Integer                                                                                   ;
+; LPM_CVALUE     ; 3       ; Integer                                                                                   ;
+; CBXI_PARAMETER ; NOTHING ; Untyped                                                                                   ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant4:inst32|lpm_constant:lpm_constant_component ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                      ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 3       ; Integer                                                                                   ;
+; LPM_CVALUE     ; 4       ; Integer                                                                                   ;
+; CBXI_PARAMETER ; NOTHING ; Untyped                                                                                   ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_constant2:inst38|lpm_constant:lpm_constant_component ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                      ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 3       ; Integer                                                                                   ;
+; LPM_CVALUE     ; 1       ; Integer                                                                                   ;
+; CBXI_PARAMETER ; NOTHING ; Untyped                                                                                   ;
++----------------+---------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_counter10:inst29|lpm_counter:lpm_counter_component ;
++------------------------+-------------+-----------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                        ;
++------------------------+-------------+-----------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                              ;
+; LPM_WIDTH              ; 2           ; Integer                                                                     ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                     ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                     ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                     ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                     ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                     ;
+; DEVICE_FAMILY          ; Cyclone     ; Untyped                                                                     ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                     ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                          ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                          ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                     ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                     ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                     ;
+; CBXI_PARAMETER         ; cntr_vrh    ; Untyped                                                                     ;
++------------------------+-------------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_mux0:inst10|lpm_mux:lpm_mux_component ;
++------------------------+---------+--------------------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                               ;
++------------------------+---------+--------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                                     ;
+; LPM_WIDTH              ; 32      ; Integer                                                            ;
+; LPM_SIZE               ; 5       ; Integer                                                            ;
+; LPM_WIDTHS             ; 3       ; Integer                                                            ;
+; LPM_PIPELINE           ; 0       ; Untyped                                                            ;
+; CBXI_PARAMETER         ; mux_sgc ; Untyped                                                            ;
+; DEVICE_FAMILY          ; Cyclone ; Untyped                                                            ;
++------------------------+---------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apdtimer:inst9|lpm_mux1:inst27|lpm_mux:lpm_mux_component ;
++------------------------+---------+--------------------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                               ;
++------------------------+---------+--------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                                     ;
+; LPM_WIDTH              ; 8       ; Integer                                                            ;
+; LPM_SIZE               ; 4       ; Integer                                                            ;
+; LPM_WIDTHS             ; 2       ; Integer                                                            ;
+; LPM_PIPELINE           ; 0       ; Untyped                                                            ;
+; CBXI_PARAMETER         ; mux_dfc ; Untyped                                                            ;
+; DEVICE_FAMILY          ; Cyclone ; Untyped                                                            ;
++------------------------+---------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; dcfifo Parameter Settings by Entity Instance                                      ;
++----------------------------+------------------------------------------------------+
+; Name                       ; Value                                                ;
++----------------------------+------------------------------------------------------+
+; Number of entity instances ; 2                                                    ;
+; Entity Instance            ; dcfifo0:inst4|dcfifo:dcfifo_component                ;
+;     -- FIFO Type           ; Dual Clock                                           ;
+;     -- LPM_WIDTH           ; 8                                                    ;
+;     -- LPM_NUMWORDS        ; 4096                                                 ;
+;     -- LPM_SHOWAHEAD       ; ON                                                   ;
+;     -- USE_EAB             ; ON                                                   ;
+; Entity Instance            ; apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component ;
+;     -- FIFO Type           ; Dual Clock                                           ;
+;     -- LPM_WIDTH           ; 32                                                   ;
+;     -- LPM_NUMWORDS        ; 16                                                   ;
+;     -- LPM_SHOWAHEAD       ; OFF                                                  ;
+;     -- USE_EAB             ; ON                                                   ;
++----------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                                                        ;
++----------------------------+----------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                  ;
++----------------------------+----------------------------------------------------------------------------------------+
+; Number of entity instances ; 1                                                                                      ;
+; Entity Instance            ; dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel ;
+;     -- FIFO Type           ; Single Clock                                                                           ;
+;     -- lpm_width           ; 8                                                                                      ;
+;     -- LPM_NUMWORDS        ; 3                                                                                      ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                     ;
+;     -- USE_EAB             ; OFF                                                                                    ;
++----------------------------+----------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jan 11 18:29:10 2007
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testingigo -c testingigo
+Info: Found 1 design units, including 1 entities, in source file FX2_bidir.v
+    Info: Found entity 1: FX2_bidir
+Info: Found 1 design units, including 1 entities, in source file clickreg.v
+    Info: Found entity 1: clickreg
+Info: Found 1 design units, including 1 entities, in source file allclickreg.v
+    Info: Found entity 1: allclickreg
+Info: Found 1 design units, including 1 entities, in source file testingigo_all.bdf
+    Info: Found entity 1: testingigo_all
+Info: Found 1 design units, including 1 entities, in source file apdtimer_all.bdf
+    Info: Found entity 1: apdtimer_all
+Warning: Using design file testingigo.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: testingigo
+Info: Elaborating entity "testingigo" for the top level hierarchy
+Info: Elaborating entity "FX2_bidir" for hierarchy "FX2_bidir:inst1"
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(41): object "FIFO3_data_available" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(42): object "FIFO4_ready_to_accept_data" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at FX2_bidir.v(43): object "FIFO5_ready_to_accept_data" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at FX2_bidir.v(112): truncated value with size 32 to match size of target (8)
+Warning: Using design file dcfifo0.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo0
+Info: Elaborating entity "dcfifo0" for hierarchy "dcfifo0:inst4"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/dcfifo.tdf
+    Info: Found entity 1: dcfifo
+Info: Elaborating entity "dcfifo" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component"
+Info: Found 1 design units, including 1 entities, in source file db/dcfifo_jq91.tdf
+    Info: Found entity 1: dcfifo_jq91
+Info: Elaborating entity "dcfifo_jq91" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_gray2bin_46b.tdf
+    Info: Found entity 1: a_gray2bin_46b
+Info: Elaborating entity "a_gray2bin_46b" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|a_gray2bin_46b:read_side_gray_converter"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_t16.tdf
+    Info: Found entity 1: a_graycounter_t16
+Info: Elaborating entity "a_graycounter_t16" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|a_graycounter_t16:rdptr_g"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_326.tdf
+    Info: Found entity 1: a_graycounter_326
+Info: Elaborating entity "a_graycounter_326" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|a_graycounter_326:read_counter_for_write"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_8941.tdf
+    Info: Found entity 1: altsyncram_8941
+Info: Elaborating entity "altsyncram_8941" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|altsyncram_8941:fifo_ram"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_ee8.tdf
+    Info: Found entity 1: alt_synch_pipe_ee8
+Info: Elaborating entity "alt_synch_pipe_ee8" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_af9.tdf
+    Info: Found entity 1: dffpipe_af9
+Info: Elaborating entity "dffpipe_af9" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_ee8:read_sync_registers|dffpipe_af9:dffpipe9"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_fe8.tdf
+    Info: Found entity 1: alt_synch_pipe_fe8
+Info: Elaborating entity "alt_synch_pipe_fe8" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_bf9.tdf
+    Info: Found entity 1: dffpipe_bf9
+Info: Elaborating entity "dffpipe_bf9" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|alt_synch_pipe_fe8:write_sync_registers|dffpipe_bf9:dffpipe13"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_qvb.tdf
+    Info: Found entity 1: add_sub_qvb
+Info: Elaborating entity "add_sub_qvb" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|add_sub_qvb:rdusedw_subtractor"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_908.tdf
+    Info: Found entity 1: cntr_908
+Info: Elaborating entity "cntr_908" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|cntr_908:rdptr_b"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/scfifo.tdf
+    Info: Found entity 1: scfifo
+Info: Elaborating entity "scfifo" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/a_fffifo.tdf
+    Info: Found entity 1: a_fffifo
+Info: Elaborating entity "a_fffifo" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_ff.tdf
+    Info: Found entity 1: lpm_ff
+Info: Elaborating entity "lpm_ff" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_ff:data_node[0][1]"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_ff:data_node[0][1]", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_mux.tdf
+    Info: Found entity 1: lpm_mux
+Info: Elaborating entity "lpm_mux" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_mux:row_data_out_mux[0]"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_mux:row_data_out_mux[0]", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file db/mux_afc.tdf
+    Info: Found entity 1: mux_afc
+Info: Elaborating entity "mux_afc" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_mux:row_data_out_mux[0]|mux_afc:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_counter.tdf
+    Info: Found entity 1: lpm_counter
+Info: Elaborating entity "lpm_counter" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_counter:rd_ptr"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_counter:rd_ptr", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_tue.tdf
+    Info: Found entity 1: cntr_tue
+Info: Elaborating entity "cntr_tue" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_tue:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/a_fefifo.tdf
+    Info: Found entity 1: a_fefifo
+Info: Elaborating entity "a_fefifo" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_compare.tdf
+    Info: Found entity 1: lpm_compare
+Info: Elaborating entity "lpm_compare" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_33g.tdf
+    Info: Found entity 1: cmpr_33g
+Info: Elaborating entity "cmpr_33g" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|cmpr_33g:auto_generated"
+Info: Elaborating entity "lpm_compare" for hierarchy "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare"
+Info: Elaborated megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel|a_fffifo:subfifo|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare", which is child of megafunction instantiation "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel"
+Info: Instantiated megafunction "dcfifo0:inst4|dcfifo:dcfifo_component|dcfifo_jq91:auto_generated|scfifo:output_channel" with the following parameter:
+    Info: Parameter "ADD_RAM_OUTPUT_REGISTER" = "ON"
+    Info: Parameter "LPM_NUMWORDS" = "3"
+    Info: Parameter "LPM_SHOWAHEAD" = "ON"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "2"
+    Info: Parameter "OVERFLOW_CHECKING" = "ON"
+    Info: Parameter "UNDERFLOW_CHECKING" = "ON"
+    Info: Parameter "USE_EAB" = "OFF"
+Warning: Using design file apdtimer.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: apdtimer
+Info: Elaborating entity "apdtimer" for hierarchy "apdtimer:inst9"
+Warning: Using design file dcfifo1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dcfifo1
+Info: Elaborating entity "dcfifo1" for hierarchy "apdtimer:inst9|dcfifo1:inst2"
+Info: Elaborating entity "dcfifo" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component"
+Info: Found 1 design units, including 1 entities, in source file db/dcfifo_pma1.tdf
+    Info: Found entity 1: dcfifo_pma1
+Info: Elaborating entity "dcfifo_pma1" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_mrc.tdf
+    Info: Found entity 1: a_fefifo_mrc
+Info: Elaborating entity "a_fefifo_mrc" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|a_fefifo_mrc:read_state"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_rrc.tdf
+    Info: Found entity 1: a_fefifo_rrc
+Info: Elaborating entity "a_fefifo_rrc" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|a_fefifo_rrc:write_state"
+Info: Found 1 design units, including 1 entities, in source file db/a_gray2bin_l4b.tdf
+    Info: Found entity 1: a_gray2bin_l4b
+Info: Elaborating entity "a_gray2bin_l4b" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|a_gray2bin_l4b:gray2bin_rs_nbwp"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_q06.tdf
+    Info: Found entity 1: a_graycounter_q06
+Info: Elaborating entity "a_graycounter_q06" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|a_graycounter_q06:rdptr_g"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_p06.tdf
+    Info: Found entity 1: a_graycounter_p06
+Info: Elaborating entity "a_graycounter_p06" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|a_graycounter_p06:wrptr_g"
+Info: Found 1 design units, including 1 entities, in source file db/dpram_evr.tdf
+    Info: Found entity 1: dpram_evr
+Info: Elaborating entity "dpram_evr" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dpram_evr:fiforam"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_vof1.tdf
+    Info: Found entity 1: altsyncram_vof1
+Info: Elaborating entity "altsyncram_vof1" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dpram_evr:fiforam|altsyncram_vof1:altsyncram3"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_bd9.tdf
+    Info: Found entity 1: dffpipe_bd9
+Info: Elaborating entity "dffpipe_bd9" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|dffpipe_bd9:dffpipe_rdbuw"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_nc8.tdf
+    Info: Found entity 1: alt_synch_pipe_nc8
+Info: Elaborating entity "alt_synch_pipe_nc8" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_hd9.tdf
+    Info: Found entity 1: dffpipe_hd9
+Info: Elaborating entity "dffpipe_hd9" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_nc8:dffpipe_rs_dgwp|dffpipe_hd9:dffpipe3"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_oc8.tdf
+    Info: Found entity 1: alt_synch_pipe_oc8
+Info: Elaborating entity "alt_synch_pipe_oc8" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_id9.tdf
+    Info: Found entity 1: dffpipe_id9
+Info: Elaborating entity "dffpipe_id9" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|alt_synch_pipe_oc8:dffpipe_ws_dgrp|dffpipe_id9:dffpipe7"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_bub.tdf
+    Info: Found entity 1: add_sub_bub
+Info: Elaborating entity "add_sub_bub" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|add_sub_bub:lpm_add_sub_rd_udwn"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_5v7.tdf
+    Info: Found entity 1: cntr_5v7
+Info: Elaborating entity "cntr_5v7" for hierarchy "apdtimer:inst9|dcfifo1:inst2|dcfifo:dcfifo_component|dcfifo_pma1:auto_generated|cntr_5v7:rdptr_b"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/MUX.tdf
+    Info: Found entity 1: mux
+Info: Elaborating entity "MUX" for hierarchy "apdtimer:inst9|MUX:inst20"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|MUX:inst20"
+Info: Elaborating entity "lpm_mux" for hierarchy "apdtimer:inst9|MUX:inst20|lpm_mux:$00001"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|MUX:inst20|lpm_mux:$00001", which is child of megafunction instantiation "apdtimer:inst9|MUX:inst20"
+Info: Instantiated megafunction "apdtimer:inst9|MUX:inst20" with the following parameter:
+    Info: Parameter "WIDTH" = "5"
+    Info: Parameter "WIDTHS" = "3"
+Info: Found 1 design units, including 1 entities, in source file db/mux_8fc.tdf
+    Info: Found entity 1: mux_8fc
+Info: Elaborating entity "mux_8fc" for hierarchy "apdtimer:inst9|MUX:inst20|lpm_mux:$00001|mux_8fc:auto_generated"
+Info: Elaborating entity "clickreg" for hierarchy "apdtimer:inst9|clickreg:inst12"
+Warning: Using design file lpm_decode3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_decode3
+Info: Elaborating entity "lpm_decode3" for hierarchy "apdtimer:inst9|lpm_decode3:inst25"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_decode.tdf
+    Info: Found entity 1: lpm_decode
+Info: Elaborating entity "lpm_decode" for hierarchy "apdtimer:inst9|lpm_decode3:inst25|lpm_decode:lpm_decode_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_decode3:inst25|lpm_decode:lpm_decode_component"
+Info: Found 1 design units, including 1 entities, in source file db/decode_hjf.tdf
+    Info: Found entity 1: decode_hjf
+Info: Elaborating entity "decode_hjf" for hierarchy "apdtimer:inst9|lpm_decode3:inst25|lpm_decode:lpm_decode_component|decode_hjf:auto_generated"
+Warning: Using design file lpm_counter3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_counter3
+Info: Elaborating entity "lpm_counter3" for hierarchy "apdtimer:inst9|lpm_counter3:inst26"
+Info: Elaborating entity "lpm_counter" for hierarchy "apdtimer:inst9|lpm_counter3:inst26|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_counter3:inst26|lpm_counter:lpm_counter_component"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_8ni.tdf
+    Info: Found entity 1: cntr_8ni
+Info: Elaborating entity "cntr_8ni" for hierarchy "apdtimer:inst9|lpm_counter3:inst26|lpm_counter:lpm_counter_component|cntr_8ni:auto_generated"
+Warning: Using design file lpm_constant0.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_constant0
+Info: Elaborating entity "lpm_constant0" for hierarchy "apdtimer:inst9|lpm_constant0:inst17"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../../altera/quartus60/libraries/megafunctions/lpm_constant.tdf
+    Info: Found entity 1: lpm_constant
+Info: Elaborating entity "lpm_constant" for hierarchy "apdtimer:inst9|lpm_constant0:inst17|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_constant0:inst17|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_counter2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_counter2
+Info: Elaborating entity "lpm_counter2" for hierarchy "apdtimer:inst9|lpm_counter2:inst9"
+Info: Elaborating entity "lpm_counter" for hierarchy "apdtimer:inst9|lpm_counter2:inst9|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_counter2:inst9|lpm_counter:lpm_counter_component"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_obi.tdf
+    Info: Found entity 1: cntr_obi
+Info: Elaborating entity "cntr_obi" for hierarchy "apdtimer:inst9|lpm_counter2:inst9|lpm_counter:lpm_counter_component|cntr_obi:auto_generated"
+Warning: Using design file lpm_constant1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_constant1
+Info: Elaborating entity "lpm_constant1" for hierarchy "apdtimer:inst9|lpm_constant1:inst18"
+Info: Elaborating entity "lpm_constant" for hierarchy "apdtimer:inst9|lpm_constant1:inst18|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_constant1:inst18|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_constant3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_constant3
+Info: Elaborating entity "lpm_constant3" for hierarchy "apdtimer:inst9|lpm_constant3:inst31"
+Info: Elaborating entity "lpm_constant" for hierarchy "apdtimer:inst9|lpm_constant3:inst31|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_constant3:inst31|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_constant4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_constant4
+Info: Elaborating entity "lpm_constant4" for hierarchy "apdtimer:inst9|lpm_constant4:inst32"
+Info: Elaborating entity "lpm_constant" for hierarchy "apdtimer:inst9|lpm_constant4:inst32|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_constant4:inst32|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_constant2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_constant2
+Info: Elaborating entity "lpm_constant2" for hierarchy "apdtimer:inst9|lpm_constant2:inst38"
+Info: Elaborating entity "lpm_constant" for hierarchy "apdtimer:inst9|lpm_constant2:inst38|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_constant2:inst38|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_counter10.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_counter10
+Info: Elaborating entity "lpm_counter10" for hierarchy "apdtimer:inst9|lpm_counter10:inst29"
+Info: Elaborating entity "lpm_counter" for hierarchy "apdtimer:inst9|lpm_counter10:inst29|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_counter10:inst29|lpm_counter:lpm_counter_component"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_vrh.tdf
+    Info: Found entity 1: cntr_vrh
+Info: Elaborating entity "cntr_vrh" for hierarchy "apdtimer:inst9|lpm_counter10:inst29|lpm_counter:lpm_counter_component|cntr_vrh:auto_generated"
+Warning: Using design file lpm_mux0.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux0
+Info: Elaborating entity "lpm_mux0" for hierarchy "apdtimer:inst9|lpm_mux0:inst10"
+Info: Elaborating entity "lpm_mux" for hierarchy "apdtimer:inst9|lpm_mux0:inst10|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_mux0:inst10|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_sgc.tdf
+    Info: Found entity 1: mux_sgc
+Info: Elaborating entity "mux_sgc" for hierarchy "apdtimer:inst9|lpm_mux0:inst10|lpm_mux:lpm_mux_component|mux_sgc:auto_generated"
+Warning: Using design file lpm_mux1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux1
+Info: Elaborating entity "lpm_mux1" for hierarchy "apdtimer:inst9|lpm_mux1:inst27"
+Info: Elaborating entity "lpm_mux" for hierarchy "apdtimer:inst9|lpm_mux1:inst27|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "apdtimer:inst9|lpm_mux1:inst27|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_dfc.tdf
+    Info: Found entity 1: mux_dfc
+Info: Elaborating entity "mux_dfc" for hierarchy "apdtimer:inst9|lpm_mux1:inst27|lpm_mux:lpm_mux_component|mux_dfc:auto_generated"
+Warning: Port "q[27]" does not exist in entity definition of "lpm_counter2".  The port's range differs between the entity definition and its actual instantiation, "apdtimer:inst9|lpm_counter2:inst9".
+Warning: Port "q[28]" does not exist in entity definition of "lpm_counter2".  The port's range differs between the entity definition and its actual instantiation, "apdtimer:inst9|lpm_counter2:inst9".
+Error: Node "apdtimer:inst9|timer[28]" is missing source
+Error: Node "apdtimer:inst9|timer[27]" is missing source
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 21 warnings
+    Error: Processing ended: Thu Jan 11 18:29:19 2007
+    Error: Elapsed time: 00:00:10
+
+
